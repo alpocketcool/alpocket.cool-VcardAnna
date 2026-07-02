@@ -50,6 +50,8 @@
   .nav-link { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
   .nav-link:hover { color: var(--accent2); }
   .nav-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 8px rgba(184,152,42,0.6); animation: pulse 2.5s ease-in-out infinite; }
+  .lang-btn { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.1em; background: transparent; border: 0.5px solid var(--border2); color: var(--muted); padding: 3px 9px; border-radius: 1px; cursor: pointer; transition: all 0.2s; }
+  .lang-btn:hover { border-color: var(--accent); color: var(--accent); }
   @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.7)} }
 
   /* HERO */
@@ -202,11 +204,12 @@
 <nav>
   <a href="#" class="nav-logo">alpocket.cool</a>
   <div class="nav-right">
-    <a href="#projects" class="nav-link">Projekty</a>
-    <a href="#about" class="nav-link">Studio</a>
-    <a href="#protokoly" class="nav-link">Oferta</a>
-    <a href="#contact" class="nav-link">Kontakt</a>
-    <div class="nav-dot" title="Dostępny"></div>
+    <a href="#projects" class="nav-link" data-en="Projects">Projekty</a>
+    <a href="#about" class="nav-link" data-en="Studio">Studio</a>
+    <a href="#protokoly" class="nav-link" data-en="Pricing">Oferta</a>
+    <a href="#contact" class="nav-link" data-en="Contact">Kontakt</a>
+    <button id="lang-toggle" class="lang-btn" onclick="toggleLang()" title="Change language / Zmień język">EN</button>
+    <div class="nav-dot" data-en-title="Available" title="Dostępny"></div>
   </div>
 </nav>
 
@@ -217,11 +220,11 @@
   <div class="hero-inner">
     <div class="hero-label">Design & Development Studio · Lublin</div>
     <h1 class="hero-title">Daniel Wilk<em>alpocket.cool</em></h1>
-    <p class="hero-sub">Projektowanie i budowanie produktów cyfrowych — strony, aplikacje, systemy brandingowe. Od konceptu do kodu.</p>
+    <p class="hero-sub" data-en="Designing and building digital products — websites, apps, brand systems. From concept to code.">Projektowanie i budowanie produktów cyfrowych — strony, aplikacje, systemy brandingowe. Od konceptu do kodu.</p>
     <div class="hero-meta">
-      <div class="meta-item"><span class="meta-num">8+</span><span class="meta-key">Projektów</span></div>
-      <div class="meta-item"><span class="meta-num">4</span><span class="meta-key">Aktywni klienci</span></div>
-      <div class="meta-item"><span class="meta-num">2025</span><span class="meta-key">W budowie</span></div>
+      <div class="meta-item"><span class="meta-num">8+</span><span class="meta-key" data-en="Projects">Projektów</span></div>
+      <div class="meta-item"><span class="meta-num">4</span><span class="meta-key" data-en="Active clients">Aktywni klienci</span></div>
+      <div class="meta-item"><span class="meta-num">2025</span><span class="meta-key" data-en="In progress">W budowie</span></div>
     </div>
   </div>
   <div class="scroll-hint">Scroll</div>
@@ -230,83 +233,83 @@
 <section id="projects">
   <div class="section-head reveal">
     <div>
-      <div class="section-label">Wybrane prace</div>
-      <h2 class="section-title">Projekty</h2>
+      <div class="section-label" data-en="Selected work">Wybrane prace</div>
+      <h2 class="section-title" data-en="Projects">Projekty</h2>
     </div>
     <div class="section-count" id="proj-count">8 projektów</div>
   </div>
 
   <div class="filter-row reveal">
-    <button class="filter-btn active" data-filter="all">Wszystkie</button>
-    <button class="filter-btn" data-filter="klient">Klienci</button>
-    <button class="filter-btn" data-filter="wlasny">Własne</button>
-    <button class="filter-btn" data-filter="tool">Narzędzia</button>
+    <button class="filter-btn active" data-filter="all" data-en="All">Wszystkie</button>
+    <button class="filter-btn" data-filter="klient" data-en="Clients">Klienci</button>
+    <button class="filter-btn" data-filter="wlasny" data-en="Own">Własne</button>
+    <button class="filter-btn" data-filter="tool" data-en="Tools">Narzędzia</button>
   </div>
 
   <div class="projects-grid">
 
     <a href="wallstory-bizplan.html" class="project-card reveal" data-category="wlasny">
-      <div class="card-top"><div class="card-tags"><span class="tag tag-wlasny">Własny</span><span class="tag tag-wip">WIP</span></div><span class="card-num">01</span></div>
+      <div class="card-top"><div class="card-tags"><span class="tag tag-wlasny" data-en="Own">Własny</span><span class="tag tag-wip">WIP</span></div><span class="card-num">01</span></div>
       <div class="card-title">WallStory</div>
       <div class="card-subtitle">Branded Interior · Business Plan</div>
-      <p class="card-desc">System wielkoformatowych grafik narracyjnych dla przestrzeni komercyjnych. Ściany jako opowieść firmy. Analiza rynku, sektory, ekonomia realizacji — przykład biznesplanu robionego w studiu.</p>
-      <div class="card-bottom"><span class="card-date">Maj 2025</span><span class="card-arrow">Otwórz dokument →</span></div>
+      <p class="card-desc" data-en="A system of large-format narrative graphics for commercial spaces. Walls as a company's story. Market analysis, sectors, execution economics — an example business plan built in-studio.">System wielkoformatowych grafik narracyjnych dla przestrzeni komercyjnych. Ściany jako opowieść firmy. Analiza rynku, sektory, ekonomia realizacji — przykład biznesplanu robionego w studiu.</p>
+      <div class="card-bottom"><span class="card-date">Maj 2025</span><span class="card-arrow" data-en="Open document →">Otwórz dokument →</span></div>
     </a>
 
     <a href="4matka.html" class="project-card reveal" data-category="tool">
-      <div class="card-top"><div class="card-tags"><span class="tag tag-tool">Narzędzie</span><span class="tag tag-wlasny">alpocket</span></div><span class="card-num">02</span></div>
+      <div class="card-top"><div class="card-tags"><span class="tag tag-tool" data-en="Tool">Narzędzie</span><span class="tag tag-wlasny">alpocket</span></div><span class="card-num">02</span></div>
       <div class="card-title">4Matka</div>
-      <div class="card-subtitle">System zapytań ofertowych</div>
-      <p class="card-desc">Formularz zapytania ofertowego dla wykonawców i audytorów branży branded interior. Wycena + audyt przestrzeni w jednym 4-krokowym interfejsie — przykład systemu ofertowego budowanego dla klientów.</p>
-      <div class="card-bottom"><span class="card-date">Maj 2025</span><span class="card-arrow">Otwórz formularz →</span></div>
+      <div class="card-subtitle" data-en="Quote request system">System zapytań ofertowych</div>
+      <p class="card-desc" data-en="A quote request form for contractors and auditors in the branded interior industry. Pricing + space audit in one 4-step interface — an example of a client quoting system.">Formularz zapytania ofertowego dla wykonawców i audytorów branży branded interior. Wycena + audyt przestrzeni w jednym 4-krokowym interfejsie — przykład systemu ofertowego budowanego dla klientów.</p>
+      <div class="card-bottom"><span class="card-date">Maj 2025</span><span class="card-arrow" data-en="Open form →">Otwórz formularz →</span></div>
     </a>
 
     <div class="project-card reveal" data-category="klient" style="cursor:default;">
-      <div class="card-top"><div class="card-tags"><span class="tag tag-klient">Klient</span></div><span class="card-num">03</span></div>
+      <div class="card-top"><div class="card-tags"><span class="tag tag-klient" data-en="Client">Klient</span></div><span class="card-num">03</span></div>
       <div class="card-title">No Problem</div>
-      <div class="card-subtitle">Anna Kondrat · Ubezpieczenia</div>
-      <p class="card-desc">Pełny system identyfikacji wizualnej agencji ubezpieczeniowej — vCard landing page, wizytówki (3 warianty), logo, system druku. Cormorant Garamond + złoto.</p>
-      <div class="card-bottom"><span class="card-date">2024–2025</span><span class="card-arrow-wip">Projekt zamknięty</span></div>
+      <div class="card-subtitle" data-en="Anna Kondrat · Insurance">Anna Kondrat · Ubezpieczenia</div>
+      <p class="card-desc" data-en="A complete visual identity system for an insurance agency — vCard landing page, business cards (3 variants), logo, print system. Cormorant Garamond + gold.">Pełny system identyfikacji wizualnej agencji ubezpieczeniowej — vCard landing page, wizytówki (3 warianty), logo, system druku. Cormorant Garamond + złoto.</p>
+      <div class="card-bottom"><span class="card-date">2024–2025</span><span class="card-arrow-wip" data-en="Project closed">Projekt zamknięty</span></div>
     </div>
 
     <a href="https://sprzatapka.alpocket.cool/" target="_blank" rel="noopener noreferrer" class="project-card reveal" data-category="klient">
-      <div class="card-top"><div class="card-tags"><span class="tag tag-klient">Klient</span><span class="tag tag-tool">PWA</span></div><span class="card-num">04</span></div>
+      <div class="card-top"><div class="card-tags"><span class="tag tag-klient" data-en="Client">Klient</span><span class="tag tag-tool">PWA</span></div><span class="card-num">04</span></div>
       <div class="card-title">CleanOps</div>
-      <div class="card-subtitle">SprzątApka — system operacyjny dla firmy sprzątającej</div>
-      <p class="card-desc">Progresywna aplikacja webowa do zarządzania zleceniami i ekipą. Landing page, formularz wyceny oraz panel — pełny system identyfikacji dla firmy sprzątającej.</p>
-      <div class="card-bottom"><span class="card-date">2025</span><span class="card-arrow">Otwórz aplikację →</span></div>
+      <div class="card-subtitle" data-en="SprzątApka — operating system for a cleaning company">SprzątApka — system operacyjny dla firmy sprzątającej</div>
+      <p class="card-desc" data-en="A progressive web app for managing jobs and crew. Landing page, quote form, and dashboard — a full identity system for a cleaning company.">Progresywna aplikacja webowa do zarządzania zleceniami i ekipą. Landing page, formularz wyceny oraz panel — pełny system identyfikacji dla firmy sprzątającej.</p>
+      <div class="card-bottom"><span class="card-date">2025</span><span class="card-arrow" data-en="Open app →">Otwórz aplikację →</span></div>
     </a>
 
     <a href="https://alpocketcool.github.io/BlackieSeriesGarage/" target="_blank" rel="noopener noreferrer" class="project-card reveal" data-category="klient">
-      <div class="card-top"><div class="card-tags"><span class="tag tag-klient">Klient</span><span class="tag tag-tool">Mini-DAW</span></div><span class="card-num">05</span></div>
+      <div class="card-top"><div class="card-tags"><span class="tag tag-klient" data-en="Client">Klient</span><span class="tag tag-tool">Mini-DAW</span></div><span class="card-num">05</span></div>
       <div class="card-title">BlackieSeries Garage</div>
       <div class="card-subtitle">Tomek "Blackie" · Beatmaking</div>
-      <p class="card-desc">Mini-DAW w jednym pliku HTML — 16 padów, sekwencer, FX na padach, miksér, nagrywanie sesji z eksportem WAV. Dla początkującego beatmakera.</p>
-      <div class="card-bottom"><span class="card-date">2025</span><span class="card-arrow">Otwórz studio →</span></div>
+      <p class="card-desc" data-en="A mini-DAW in a single HTML file — 16 pads, sequencer, pad FX, mixer, session recording with WAV export. For a beginner beatmaker.">Mini-DAW w jednym pliku HTML — 16 padów, sekwencer, FX na padach, miksér, nagrywanie sesji z eksportem WAV. Dla początkującego beatmakera.</p>
+      <div class="card-bottom"><span class="card-date">2025</span><span class="card-arrow" data-en="Open studio →">Otwórz studio →</span></div>
     </a>
 
     <a href="https://agniecka.alpocket.cool/" target="_blank" rel="noopener noreferrer" class="project-card reveal" data-category="klient">
-      <div class="card-top"><div class="card-tags"><span class="tag tag-klient">Rodzina</span><span class="tag tag-wlasny">Atelier</span></div><span class="card-num">06</span></div>
+      <div class="card-top"><div class="card-tags"><span class="tag tag-klient" data-en="Family">Rodzina</span><span class="tag tag-wlasny">Atelier</span></div><span class="card-num">06</span></div>
       <div class="card-title">agNIECKA</div>
       <div class="card-subtitle">Agnieszka Niedźwiecka · Atelier</div>
-      <p class="card-desc">Portfolio i witryna rękodzieła. Dyskretna, kobieca, atmosferyczna estetyka — jedna hero-grafika na kategorię, przejścia kurtynowe.</p>
-      <div class="card-bottom"><span class="card-date">2025</span><span class="card-arrow">Wejdź do atelier →</span></div>
+      <p class="card-desc" data-en="Portfolio and craft website. Discreet, feminine, atmospheric aesthetic — one hero image per category, curtain transitions.">Portfolio i witryna rękodzieła. Dyskretna, kobieca, atmosferyczna estetyka — jedna hero-grafika na kategorię, przejścia kurtynowe.</p>
+      <div class="card-bottom"><span class="card-date">2025</span><span class="card-arrow" data-en="Enter atelier →">Wejdź do atelier →</span></div>
     </a>
 
     <a href="https://mousesart.alpocket.cool/" target="_blank" rel="noopener noreferrer" class="project-card reveal" data-category="klient">
-      <div class="card-top"><div class="card-tags"><span class="tag tag-klient">Przyjaciel</span></div><span class="card-num">07</span></div>
+      <div class="card-top"><div class="card-tags"><span class="tag tag-klient" data-en="Friend">Przyjaciel</span></div><span class="card-num">07</span></div>
       <div class="card-title">MosesArt & Vibe</div>
-      <div class="card-subtitle">Moses · Muzyk / Artysta wizualny</div>
-      <p class="card-desc">Mroczna, gotycka estetyka — cztery sekcje pełnoekranowe: obrazy, tatuaże, muzyka, notatnik. Paleta: czerń, kość, rdza, złoto, krew.</p>
-      <div class="card-bottom"><span class="card-date">2025</span><span class="card-arrow">Wejdź →</span></div>
+      <div class="card-subtitle" data-en="Moses · Musician / Visual artist">Moses · Muzyk / Artysta wizualny</div>
+      <p class="card-desc" data-en="Dark, gothic aesthetic — four full-screen sections: art, tattoos, music, notebook. Palette: black, bone, rust, gold, blood.">Mroczna, gotycka estetyka — cztery sekcje pełnoekranowe: obrazy, tatuaże, muzyka, notatnik. Paleta: czerń, kość, rdza, złoto, krew.</p>
+      <div class="card-bottom"><span class="card-date">2025</span><span class="card-arrow" data-en="Enter →">Wejdź →</span></div>
     </a>
 
     <a href="https://czesiek.alpocket.cool/" target="_blank" rel="noopener noreferrer" class="project-card reveal" data-category="klient">
-      <div class="card-top"><div class="card-tags"><span class="tag tag-klient">Klient</span></div><span class="card-num">08</span></div>
+      <div class="card-top"><div class="card-tags"><span class="tag tag-klient" data-en="Client">Klient</span></div><span class="card-num">08</span></div>
       <div class="card-title">Czesiek</div>
-      <div class="card-subtitle">Lokalny elektryk</div>
-      <p class="card-desc">Wizytówka lokalnego elektryka — kontakt, zakres usług.</p>
-      <div class="card-bottom"><span class="card-date">2025</span><span class="card-arrow">Otwórz →</span></div>
+      <div class="card-subtitle" data-en="Local electrician">Lokalny elektryk</div>
+      <p class="card-desc" data-en="A local electrician's business card site — contact, service scope.">Wizytówka lokalnego elektryka — kontakt, zakres usług.</p>
+      <div class="card-bottom"><span class="card-date">2025</span><span class="card-arrow" data-en="Open →">Otwórz →</span></div>
     </a>
 
 
@@ -318,15 +321,15 @@
   <div class="about-grid">
     <div class="about-left reveal">
       <div class="section-label">Studio</div>
-      <h2>Design który<br><em>dowozi.</em></h2>
-      <p>alpocket.cool to niezależne studio projektowe na styku designu i developmentu. Buduję produkty cyfrowe — od identyfikacji wizualnej przez landing pages po aplikacje webowe.</p>
-      <p>Każdy projekt żyje jako dokument w przeglądarce. Bez Figmy do wysyłki — działający kod od pierwszego dnia.</p>
+      <h2 data-en-html="Design that<br><em>delivers.</em>">Design który<br><em>dowozi.</em></h2>
+      <p data-en="alpocket.cool is an independent design studio at the intersection of design and development. I build digital products — from visual identity through landing pages to web apps.">alpocket.cool to niezależne studio projektowe na styku designu i developmentu. Buduję produkty cyfrowe — od identyfikacji wizualnej przez landing pages po aplikacje webowe.</p>
+      <p data-en="Every project lives as a document in the browser. No Figma handoffs — working code from day one.">Każdy projekt żyje jako dokument w przeglądarce. Bez Figmy do wysyłki — działający kod od pierwszego dnia.</p>
     </div>
     <div class="about-right reveal">
-      <div class="service-row"><span class="service-icon">◈</span><div><div class="service-name">Identyfikacja wizualna</div><div class="service-desc">Logo, system brandingowy, materiały drukowane. Od konceptu do gotowych plików.</div></div></div>
-      <div class="service-row"><span class="service-icon">◉</span><div><div class="service-name">Strony & landing pages</div><div class="service-desc">Responsywne, szybkie, bez zbędnych zależności. HTML/CSS/JS lub React.</div></div></div>
-      <div class="service-row"><span class="service-icon">◫</span><div><div class="service-name">Aplikacje webowe</div><div class="service-desc">PWA, narzędzia wewnętrzne, prototypy z gotową ścieżką do produkcji.</div></div></div>
-      <div class="service-row"><span class="service-icon">◬</span><div><div class="service-name">Branded interior</div><div class="service-desc">Projekt systemów graficznych dla przestrzeni komercyjnych — WallStory.</div></div></div>
+      <div class="service-row"><span class="service-icon">◈</span><div><div class="service-name" data-en="Visual identity">Identyfikacja wizualna</div><div class="service-desc" data-en="Logo, brand system, printed materials. From concept to final files.">Logo, system brandingowy, materiały drukowane. Od konceptu do gotowych plików.</div></div></div>
+      <div class="service-row"><span class="service-icon">◉</span><div><div class="service-name" data-en="Websites & landing pages">Strony & landing pages</div><div class="service-desc" data-en="Responsive, fast, no unnecessary dependencies. HTML/CSS/JS or React.">Responsywne, szybkie, bez zbędnych zależności. HTML/CSS/JS lub React.</div></div></div>
+      <div class="service-row"><span class="service-icon">◫</span><div><div class="service-name" data-en="Web applications">Aplikacje webowe</div><div class="service-desc" data-en="PWAs, internal tools, prototypes with a clear path to production.">PWA, narzędzia wewnętrzne, prototypy z gotową ścieżką do produkcji.</div></div></div>
+      <div class="service-row"><span class="service-icon">◬</span><div><div class="service-name">Branded interior</div><div class="service-desc" data-en="Graphic systems design for commercial spaces — WallStory.">Projekt systemów graficznych dla przestrzeni komercyjnych — WallStory.</div></div></div>
     </div>
   </div>
 </section>
@@ -335,10 +338,10 @@
 <section id="protokoly">
   <div class="section-head reveal">
     <div>
-      <div class="section-label">Oferta</div>
-      <h2 class="section-title">Protokoły<br><em style="font-style:italic;color:var(--accent2)">wdrożeniowe.</em></h2>
+      <div class="section-label" data-en="Pricing">Oferta</div>
+      <h2 class="section-title" data-en-html="Delivery<br><em style=&quot;font-style:italic;color:var(--accent2)&quot;>protocols.</em>">Protokoły<br><em style="font-style:italic;color:var(--accent2)">wdrożeniowe.</em></h2>
     </div>
-    <div class="section-count">Czas · Jakość · Wynik</div>
+    <div class="section-count" data-en="Time · Quality · Result">Czas · Jakość · Wynik</div>
   </div>
 
   <div class="protokoly-grid">
@@ -349,16 +352,16 @@
         <span class="protokol-status status-ready">READY</span>
       </div>
       <div class="protokol-price">2 000</div>
-      <div class="protokol-price-note">PLN netto · jedna płatność</div>
-      <p class="protokol-desc">Budowa i wdrożenie wizytówki w 24 godziny. Surowy design, pełna optymalizacja — gotowe zanim konkurencja wstanie od biurka.</p>
+      <div class="protokol-price-note" data-en="PLN net · one-time payment">PLN netto · jedna płatność</div>
+      <p class="protokol-desc" data-en="Building and launching a business card site in 24 hours. Raw design, full optimization — ready before your competitors get up from their desk.">Budowa i wdrożenie wizytówki w 24 godziny. Surowy design, pełna optymalizacja — gotowe zanim konkurencja wstanie od biurka.</p>
       <div class="protokol-features">
-        <span class="protokol-feature">Projekt + kod w 24h</span>
-        <span class="protokol-feature">Mobile-first, bez frameworków</span>
+        <span class="protokol-feature" data-en="Design + code in 24h">Projekt + kod w 24h</span>
+        <span class="protokol-feature" data-en="Mobile-first, no frameworks">Mobile-first, bez frameworków</span>
         <span class="protokol-feature">Deploy na Vercel / GitHub Pages</span>
-        <span class="protokol-feature">1 runda poprawek</span>
+        <span class="protokol-feature" data-en="1 round of revisions">1 runda poprawek</span>
       </div>
       <div class="protokol-cta">
-        <a href="mailto:alpocketcool@gmail.com?subject=PROTOCOL 24H" class="protokol-btn protokol-btn-ghost">Zamów →</a>
+        <a href="mailto:alpocketcool@gmail.com?subject=PROTOCOL 24H" class="protokol-btn protokol-btn-ghost" data-en="Order →">Zamów →</a>
       </div>
     </div>
 
@@ -368,17 +371,17 @@
         <span class="protokol-status status-active">ACTIVE</span>
       </div>
       <div class="protokol-price">4 500</div>
-      <div class="protokol-price-note">PLN netto · zaliczka 40%</div>
-      <p class="protokol-desc">Pełny system wizualny do 5 podstron z integracją WhatsApp Business. Wdrożenie w dwie doby — identyfikacja, treść, kontakt, gotowe.</p>
+      <div class="protokol-price-note" data-en="PLN net · 40% deposit">PLN netto · zaliczka 40%</div>
+      <p class="protokol-desc" data-en="A complete visual system for up to 5 pages with WhatsApp Business integration. Delivered in two days — identity, content, contact, done.">Pełny system wizualny do 5 podstron z integracją WhatsApp Business. Wdrożenie w dwie doby — identyfikacja, treść, kontakt, gotowe.</p>
       <div class="protokol-features">
-        <span class="protokol-feature">Do 5 podstron</span>
+        <span class="protokol-feature" data-en="Up to 5 pages">Do 5 podstron</span>
         <span class="protokol-feature">WhatsApp Business widget</span>
-        <span class="protokol-feature">System identyfikacji wizualnej</span>
-        <span class="protokol-feature">SEO podstawowe + meta</span>
-        <span class="protokol-feature">2 rundy poprawek</span>
+        <span class="protokol-feature" data-en="Visual identity system">System identyfikacji wizualnej</span>
+        <span class="protokol-feature" data-en="Basic SEO + meta">SEO podstawowe + meta</span>
+        <span class="protokol-feature" data-en="2 rounds of revisions">2 rundy poprawek</span>
       </div>
       <div class="protokol-cta">
-        <a href="mailto:alpocketcool@gmail.com?subject=PROTOCOL 48H" class="protokol-btn protokol-btn-primary">Zamów →</a>
+        <a href="mailto:alpocketcool@gmail.com?subject=PROTOCOL 48H" class="protokol-btn protokol-btn-primary" data-en="Order →">Zamów →</a>
       </div>
     </div>
 
@@ -387,17 +390,17 @@
         <span class="protokol-name">[SYSTEM: CUSTOM]</span>
         <span class="protokol-status status-standby">STANDBY</span>
       </div>
-      <div class="protokol-price" style="font-size:1.5rem;line-height:1.2;padding-top:0.3rem;">Wycena<br>indywidualna</div>
-      <div class="protokol-price-note">Brief → estymacja → kontrakt</div>
-      <p class="protokol-desc">Aplikacje, systemy brandingowe, PWA, dashboardy. Architektura dopasowana do skali projektu — od landing po pełny produkt cyfrowy.</p>
+      <div class="protokol-price" style="font-size:1.5rem;line-height:1.2;padding-top:0.3rem;" data-en-html="Custom<br>quote">Wycena<br>indywidualna</div>
+      <div class="protokol-price-note" data-en="Brief → estimate → contract">Brief → estymacja → kontrakt</div>
+      <p class="protokol-desc" data-en="Apps, brand systems, PWAs, dashboards. Architecture matched to project scale — from landing page to full digital product.">Aplikacje, systemy brandingowe, PWA, dashboardy. Architektura dopasowana do skali projektu — od landing po pełny produkt cyfrowy.</p>
       <div class="protokol-features">
-        <span class="protokol-feature">Aplikacje webowe i PWA</span>
-        <span class="protokol-feature">Systemy wielostronicowe</span>
-        <span class="protokol-feature">Integracje zewnętrzne</span>
-        <span class="protokol-feature">Opieka po wdrożeniu</span>
+        <span class="protokol-feature" data-en="Web apps and PWAs">Aplikacje webowe i PWA</span>
+        <span class="protokol-feature" data-en="Multi-page systems">Systemy wielostronicowe</span>
+        <span class="protokol-feature" data-en="External integrations">Integracje zewnętrzne</span>
+        <span class="protokol-feature" data-en="Post-launch support">Opieka po wdrożeniu</span>
       </div>
       <div class="protokol-cta">
-        <a href="mailto:alpocketcool@gmail.com?subject=SYSTEM CUSTOM — brief" class="protokol-btn protokol-btn-ghost">Wyślij brief →</a>
+        <a href="mailto:alpocketcool@gmail.com?subject=SYSTEM CUSTOM — brief" class="protokol-btn protokol-btn-ghost" data-en="Send brief →">Wyślij brief →</a>
       </div>
     </div>
 
@@ -406,9 +409,9 @@
 
 <!-- FORMULARZ ZGŁOSZENIOWY -->
 <section id="zapytanie" style="padding: 6rem 2.5rem; max-width: 700px; margin: 0 auto; border-top: 0.5px solid var(--border); position: relative; z-index: 1;">
-  <div class="section-label reveal">Współpraca</div>
-  <h2 class="reveal" style="margin-bottom: 1rem;">Masz pomysł<br>na <em>projekt?</em></h2>
-  <p class="reveal" style="font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin-bottom: 2.5rem; max-width: 480px;">
+  <div class="section-label reveal" data-en="Collaboration">Współpraca</div>
+  <h2 class="reveal" style="margin-bottom: 1rem;" data-en-html="Got an idea<br>for a <em>project?</em>">Masz pomysł<br>na <em>projekt?</em></h2>
+  <p class="reveal" style="font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin-bottom: 2.5rem; max-width: 480px;" data-en="Describe what you need in your own words — even if you don't know what to call it yet. I reply personally, usually within 24h.">
     Opisz swoimi słowami, czego potrzebujesz — nawet jeśli nie wiesz jeszcze jak to nazwać. Odpowiadam osobiście, zwykle w ciągu 24h.
   </p>
 
@@ -418,62 +421,62 @@
 
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
       <div>
-        <label style="display:block; font-family:'DM Mono',monospace; font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted2); margin-bottom:0.5rem;">Imię / Firma</label>
+        <label style="display:block; font-family:'DM Mono',monospace; font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted2); margin-bottom:0.5rem;" data-en="Name / Company">Imię / Firma</label>
         <input type="text" name="name" required style="width:100%; background:var(--bg2); border:0.5px solid var(--border2); color:var(--text); padding:0.75rem 1rem; font-family:'DM Sans',sans-serif; font-size:0.85rem; border-radius:1px;">
       </div>
       <div>
-        <label style="display:block; font-family:'DM Mono',monospace; font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted2); margin-bottom:0.5rem;">E-mail lub WhatsApp</label>
+        <label style="display:block; font-family:'DM Mono',monospace; font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted2); margin-bottom:0.5rem;" data-en="Email or WhatsApp">E-mail lub WhatsApp</label>
         <input type="text" name="contact" required style="width:100%; background:var(--bg2); border:0.5px solid var(--border2); color:var(--text); padding:0.75rem 1rem; font-family:'DM Sans',sans-serif; font-size:0.85rem; border-radius:1px;">
       </div>
     </div>
 
     <div>
-      <label style="display:block; font-family:'DM Mono',monospace; font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted2); margin-bottom:0.5rem;">Rodzaj projektu</label>
+      <label style="display:block; font-family:'DM Mono',monospace; font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted2); margin-bottom:0.5rem;" data-en="Project type">Rodzaj projektu</label>
       <select name="typ_projektu" style="width:100%; background:var(--bg2); border:0.5px solid var(--border2); color:var(--text); padding:0.75rem 1rem; font-family:'DM Sans',sans-serif; font-size:0.85rem; border-radius:1px;">
-        <option>Strona / landing page</option>
-        <option>Aplikacja (PWA)</option>
-        <option>System / branding</option>
-        <option>Nie wiem, podpowiedz</option>
-        <option>Inne</option>
+        <option data-en="Website / landing page">Strona / landing page</option>
+        <option data-en="App (PWA)">Aplikacja (PWA)</option>
+        <option data-en="System / branding">System / branding</option>
+        <option data-en="Not sure, suggest something">Nie wiem, podpowiedz</option>
+        <option data-en="Other">Inne</option>
       </select>
     </div>
 
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
       <div>
-        <label style="display:block; font-family:'DM Mono',monospace; font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted2); margin-bottom:0.5rem;">Budżet orientacyjny</label>
+        <label style="display:block; font-family:'DM Mono',monospace; font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted2); margin-bottom:0.5rem;" data-en="Approximate budget">Budżet orientacyjny</label>
         <select name="budzet" style="width:100%; background:var(--bg2); border:0.5px solid var(--border2); color:var(--text); padding:0.75rem 1rem; font-family:'DM Sans',sans-serif; font-size:0.85rem; border-radius:1px;">
-          <option>Do 2000 zł</option>
-          <option>2000–4500 zł</option>
-          <option>4500–10 000 zł</option>
-          <option>Nie wiem, podpowiedz</option>
+          <option data-en="Up to 2000 PLN">Do 2000 zł</option>
+          <option data-en="2000–4500 PLN">2000–4500 zł</option>
+          <option data-en="4500–10,000 PLN">4500–10 000 zł</option>
+          <option data-en="Not sure, suggest something">Nie wiem, podpowiedz</option>
         </select>
       </div>
       <div>
-        <label style="display:block; font-family:'DM Mono',monospace; font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted2); margin-bottom:0.5rem;">Termin</label>
+        <label style="display:block; font-family:'DM Mono',monospace; font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted2); margin-bottom:0.5rem;" data-en="Timeline">Termin</label>
         <select name="termin" style="width:100%; background:var(--bg2); border:0.5px solid var(--border2); color:var(--text); padding:0.75rem 1rem; font-family:'DM Sans',sans-serif; font-size:0.85rem; border-radius:1px;">
-          <option>Pali się (ASAP)</option>
-          <option>W tym miesiącu</option>
-          <option>Elastyczny</option>
+          <option data-en="Urgent (ASAP)">Pali się (ASAP)</option>
+          <option data-en="This month">W tym miesiącu</option>
+          <option data-en="Flexible">Elastyczny</option>
         </select>
       </div>
     </div>
 
     <div>
-      <label style="display:block; font-family:'DM Mono',monospace; font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted2); margin-bottom:0.5rem;">Opowiedz swoimi słowami</label>
-      <textarea name="opis" rows="5" required placeholder="Opisz swój pomysł, problem albo to, czego potrzebujesz..." style="width:100%; background:var(--bg2); border:0.5px solid var(--border2); color:var(--text); padding:0.75rem 1rem; font-family:'DM Sans',sans-serif; font-size:0.85rem; border-radius:1px; resize:vertical;"></textarea>
+      <label style="display:block; font-family:'DM Mono',monospace; font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted2); margin-bottom:0.5rem;" data-en="Tell me in your own words">Opowiedz swoimi słowami</label>
+      <textarea name="opis" rows="5" required placeholder="Opisz swój pomysł, problem albo to, czego potrzebujesz..." data-en-placeholder="Describe your idea, problem, or what you need..." style="width:100%; background:var(--bg2); border:0.5px solid var(--border2); color:var(--text); padding:0.75rem 1rem; font-family:'DM Sans',sans-serif; font-size:0.85rem; border-radius:1px; resize:vertical;"></textarea>
     </div>
 
-    <button type="submit" style="font-family:'DM Mono',monospace; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; padding:0.9rem 2rem; border-radius:1px; border:0.5px solid var(--accent); background:var(--accent); color:var(--bg); font-weight:500; cursor:pointer; margin-top:0.5rem; transition:all 0.2s;" onmouseover="this.style.background='var(--accent2)'" onmouseout="this.style.background='var(--accent)'">
+    <button type="submit" style="font-family:'DM Mono',monospace; font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; padding:0.9rem 2rem; border-radius:1px; border:0.5px solid var(--accent); background:var(--accent); color:var(--bg); font-weight:500; cursor:pointer; margin-top:0.5rem; transition:all 0.2s;" onmouseover="this.style.background='var(--accent2)'" onmouseout="this.style.background='var(--accent)'" data-en="Send inquiry →">
       Wyślij zapytanie →
     </button>
-    <p style="font-size:0.72rem; color:var(--muted2); margin-top:-0.3rem;">Odpowiadam osobiście, zwykle w ciągu 24h.</p>
+    <p style="font-size:0.72rem; color:var(--muted2); margin-top:-0.3rem;" data-en="I reply personally, usually within 24h.">Odpowiadam osobiście, zwykle w ciągu 24h.</p>
   </form>
 </section>
 
 <section id="contact">
-  <div class="section-label reveal" style="margin-bottom:1rem;">Kontakt</div>
-  <h2 class="reveal">Porozmawiajmy<br>o <em>projekcie.</em></h2>
-  <p class="reveal">Nowe zlecenia, współpraca, pytania — odpowiadam szybko.</p>
+  <div class="section-label reveal" style="margin-bottom:1rem;" data-en="Contact">Kontakt</div>
+  <h2 class="reveal" data-en-html="Let's talk<br>about your <em>project.</em>">Porozmawiajmy<br>o <em>projekcie.</em></h2>
+  <p class="reveal" data-en="New projects, collaboration, questions — I respond quickly.">Nowe zlecenia, współpraca, pytania — odpowiadam szybko.</p>
   <div class="contact-links reveal">
     <a href="https://wa.me/48733923159?text=Cześć%2C%20chciałbym%20zapytać%20o%20projekt." target="_blank" rel="noopener noreferrer" class="contact-btn btn-primary-c">WhatsApp →</a>
     <a href="tel:+48733923159" class="contact-btn btn-ghost-c">+48 733 923 159</a>
@@ -487,7 +490,7 @@
 </footer>
 
 <!-- WHATSAPP WIDGET -->
-<a href="https://wa.me/48733923159?text=Cześć%2C%20chciałbym%20zapytać%20o%20projekt." target="_blank" rel="noopener noreferrer" id="wa-btn" title="Napisz na WhatsApp" style="position:fixed;bottom:1.8rem;right:1.8rem;z-index:200;width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.35);transition:transform 0.2s,box-shadow 0.2s;text-decoration:none;">
+<a href="https://wa.me/48733923159?text=Cześć%2C%20chciałbym%20zapytać%20o%20projekt." target="_blank" rel="noopener noreferrer" id="wa-btn" title="Napisz na WhatsApp" data-en-title="Message on WhatsApp" style="position:fixed;bottom:1.8rem;right:1.8rem;z-index:200;width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.35);transition:transform 0.2s,box-shadow 0.2s;text-decoration:none;">
   <svg width="26" height="26" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
     <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.531 5.845L.057 23.428a.75.75 0 00.916.916l5.588-1.474A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.7-.502-5.25-1.383l-.376-.214-3.892 1.026 1.026-3.892-.214-.376A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
@@ -512,21 +515,64 @@
   }, { threshold: 0.08 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
+  let currentLang = 'pl';
+
+  function projCountText(n) {
+    if (currentLang === 'en') return n + (n === 1 ? ' project' : ' projects');
+    return n + (n === 1 ? ' projekt' : n < 5 ? ' projekty' : ' projektów');
+  }
+
+  function updateProjCount() {
+    const activeBtn = document.querySelector('.filter-btn.active');
+    const f = activeBtn ? activeBtn.dataset.filter : 'all';
+    let visible = 0;
+    document.querySelectorAll('.project-card').forEach(card => {
+      if (f === 'all' || card.dataset.category === f) visible++;
+    });
+    document.getElementById('proj-count').textContent = projCountText(visible);
+  }
+
   document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       const f = btn.dataset.filter;
-      let visible = 0;
       document.querySelectorAll('.project-card').forEach(card => {
         const show = f === 'all' || card.dataset.category === f;
         card.classList.toggle('hidden', !show);
-        if (show) visible++;
       });
-      const c = document.getElementById('proj-count');
-      c.textContent = visible + (visible === 1 ? ' projekt' : visible < 5 ? ' projekty' : ' projektów');
+      updateProjCount();
     });
   });
+
+  function toggleLang() {
+    currentLang = currentLang === 'pl' ? 'en' : 'pl';
+    const toEn = currentLang === 'en';
+    document.documentElement.lang = currentLang;
+
+    document.querySelectorAll('[data-en]').forEach(el => {
+      if (el.dataset.plStore === undefined) el.dataset.plStore = el.textContent;
+      el.textContent = toEn ? el.dataset.en : el.dataset.plStore;
+    });
+
+    document.querySelectorAll('[data-en-html]').forEach(el => {
+      if (el.dataset.plHtmlStore === undefined) el.dataset.plHtmlStore = el.innerHTML;
+      el.innerHTML = toEn ? el.dataset.enHtml : el.dataset.plHtmlStore;
+    });
+
+    document.querySelectorAll('[data-en-title]').forEach(el => {
+      if (el.dataset.plTitleStore === undefined) el.dataset.plTitleStore = el.title;
+      el.title = toEn ? el.dataset.enTitle : el.dataset.plTitleStore;
+    });
+
+    document.querySelectorAll('[data-en-placeholder]').forEach(el => {
+      if (el.dataset.plPlaceholderStore === undefined) el.dataset.plPlaceholderStore = el.placeholder;
+      el.placeholder = toEn ? el.dataset.enPlaceholder : el.dataset.plPlaceholderStore;
+    });
+
+    document.getElementById('lang-toggle').textContent = toEn ? 'PL' : 'EN';
+    updateProjCount();
+  }
 
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
